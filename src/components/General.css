@@ -1,0 +1,99 @@
+/* Nada mas van las reglas generales del Css accesibles desde cualquier pagina. */
+
+.txtSmall {
+    font-size: 1.5rem; }
+  
+  .txtSmall2 {
+    font-size: 2rem; }
+  
+  .txtMed {
+    font-size: 2.5rem; }
+  
+  .txtMed2 {
+    font-size: 4rem; }
+  
+  .txtBig {
+    font-size: 5rem; }
+  
+  .txtCenter {
+    text-align: center; }
+  
+  .txtLeft {
+    text-align: left; }
+  
+  .txtRight {
+    text-align: right; }
+  
+  .txtWhite {
+    color: white; }
+  
+  .txtBlack {
+    color: black; }
+  
+  .bgBrown {
+    background-color: #E0A367; }
+  
+  .bgWhite {
+    background-color: white; }
+  
+  .bgBlack {
+    background-color: black; }
+  
+  .bgNormal {
+    background: transparent !important; }
+  
+  .fontSpecial {
+    font-family: "Yeseva One", sans-serif;
+    color: black; }
+  
+  .border {
+    border: 2px block solid; }
+  
+  .spBorder {
+    border: 2px dashed #E0A367; }
+  
+  .noneBorder {
+    border: none; }
+  
+  @keyframes txtAlpha {
+    from {
+      opacity: 0; }
+    to {
+      opacity: 1; } }
+  
+  .margin {
+    margin: 2% 0; }
+  
+  .scale:hover {
+    transform: scale(1.03);
+    transition: scale 3s; }
+  
+  .scale2:hover {
+    transform: scale(1.08);
+    transition: scale 3s; }
+  
+  .width3 {
+    width: 110%; }
+  
+  .width2 {
+    width: 90%; }
+  
+  .form__width {
+    width: 25%;
+    font-size: 2rem; }
+  
+  .div__header {
+    background-color: black;
+    padding: 0.5% 0 0.1% 0;
+    color: white; }
+  
+  .div__header p {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem; }
+  
+  .header__z-index {
+    z-index: 1; }
+  
+  #oops {
+    background-color: white !important; }

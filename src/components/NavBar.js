@@ -1,5 +1,5 @@
+import CartWidget from "./CartWidget"
 import "./NavBar.css"
-import "./General.css"
 
 const NavBar = ()=> {
     return (
@@ -21,33 +21,33 @@ const NavBar = ()=> {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav m-auto mb-2 mb-lg-0 txtMed">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link active" href="pages/productos.html">Productos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link active" href="pages/novedades.html">Novedades</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link active" href="pages/nosotros.html">Nosotros?</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link active" href="pages/faq.html">FAQ</a>
-                        </li>
-                    </ul>
-
-                    <form id="formBusqueda" className="d-flex me-3 form__width">
-                        <input id="inputBusqueda" className="me-2 txtSmall" type="text" placeholder="Haga click en busqueda..." aria-label="Search" />
-                        <button id="inputBoton" className="btn btn-outline-light btn-lg" type="button"> <span className="txtSmall">Búqueda</span></button>
-                    </form>
-
+                        <ul className="navbar-nav m-auto mb-2 mb-lg-0 txtMed">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="pages/productos.html">Productos</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="pages/novedades.html">Novedades</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="pages/nosotros.html">Nosotros</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="pages/faq.html">FAQ</a>
+                            </li>
+                        </ul>
                 </div>
+                <CartWidget/>
             </div>
         </nav>
     </>
     )
 }
 export default NavBar
+
+/*<div id="formBusqueda" className="d-flex me-3 form__width">
+<input id="inputBusqueda" className="me-2 txtSmall" type="text" placeholder="Haga click en busqueda..." aria-label="Search" />
+<button id="inputBoton" className="btn btn-outline-light btn-lg" type="button"> <span className="txtSmall">Búqueda</span></button>
+</div> */

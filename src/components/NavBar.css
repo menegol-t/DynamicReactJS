@@ -22,7 +22,7 @@ nav a h1 {
   .nav-link:hover {
     color: white !important;
     background-size: 100% 2px; }
-  nav div div form {
+  nav div div img {
     display: inline-block;
     vertical-align: middle;
     animation-name: txtAlpha;

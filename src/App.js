@@ -7,10 +7,10 @@ function App() {
   return (
     <div>
       <NavBar />  
-      
+      <ItemListContainer porAhoraUnGreeting={futuroContenido}/>
     </div>
   );
 }
 
 export default App;
-/*<ItemListContainer porAhoraUnGreeting={futuroContenido}/> */
+/* */

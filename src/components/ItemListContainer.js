@@ -1,4 +1,4 @@
-const ItemListContainer = (porAhoraUnGreeting) => {
+const ItemListContainer = ({porAhoraUnGreeting}) => {
     return (
         <main>
             <header>

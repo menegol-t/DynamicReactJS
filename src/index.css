@@ -14,7 +14,6 @@ html {
     background: #020024;
     background: linear-gradient(0deg, #020024 0%, #b8d7ff 0%, #9af6ff 100%);
     font-size: 2rem; }
-    /* Como todavia no hay contenido, obvio el main. 
     html body main {
       margin: 1% 1.5%; }
       html body main section article ul {
@@ -22,4 +21,4 @@ html {
         html body main section article ul section article ul span {
           position: relative;
           left: -6px; }
-    */
+    

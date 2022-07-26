@@ -1,0 +1,10 @@
+.itemCount__botoncitos {
+    margin: 0.5% auto;
+    display: flex;
+    justify-content: space-evenly;
+    ;}
+
+.itemCount__div {
+    width: 13%;
+    align-content: center;}
+

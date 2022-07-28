@@ -1,4 +1,4 @@
-import CartWidgetIMG from "../img/CartWidget.png"
+import CartWidgetIMG from "../carrito/CartWidget.png"
 /* usa boostrap y css de que saca de NavBar.css */
 const CartWidget = () =>{
     return(

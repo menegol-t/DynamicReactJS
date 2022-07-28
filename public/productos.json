@@ -1,0 +1,6 @@
+[
+    {"nombre": "Dijon", "precio": "$7.500,00" , "src": "img/dijon/dijon.jpg", "alt": "Anteojos de lente circular, madera rayada en rojo y negro.", "id": "dijonbtn", "figure": "figureDijon"},
+    {"nombre": "Le mans", "precio": "$7.599,99" , "src": "img/lemans/lemans10.JPG", "alt": "Anteojos de lente cuadrado, color madera oscura.", "id": "lemansbtn", "figure": "figureLemans"},
+    {"nombre": "Lyon", "precio": "$7.199,99" , "src": "img/lyon/lyon.jpg", "alt": "Anteojos de lente ovalado, madera clara.", "id": "lyonbtn", "figure": "figureLyon"},
+    {"nombre": "Nantes", "precio": "$7.500,00" , "src": "img/nantes/nantes12.JPG", "alt": "Anteojos de lente curvilineo, madera oscura.", "id": "nantesbtn", "figure": "figureNantes"}
+]

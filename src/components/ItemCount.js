@@ -35,12 +35,12 @@ const ItemCount = ({ stock, prod}) => {
             setCantidad(cantidad - 1)
         }
     
-        {cantidad < 0 ? cantidad = 0 : console.log() }
+        cantidad < 0 ? cantidad = 0 : console.log() 
 
-        {cantidad > stock ? cantidad = stock : console.log() }
+        cantidad > stock ? cantidad = stock : console.log() 
 
         const addOnCart = () => {
-            {cantidad > 0 ? console.log("Estas añadiendo " + cantidad.valueOf() + " " + prod.valueOf() + " a tu carrito.") : console.log()}
+            cantidad > 0 ? console.log("Estas añadiendo " + cantidad.valueOf() + " " + prod.valueOf() + " a tu carrito.") : console.log()
         }
 
         return(

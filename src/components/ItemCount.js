@@ -2,10 +2,14 @@ import React, { useState } from "react"
 import "./ItemCount.css"
 
 const ItemCount = ({ stock, prod}) => {
+    /*Por ahora recibe el nombre del producto y el stock directo desde dentro de App.js*/
     let [cantidad, setCantidad] = useState(1)
+
+    let botonMainTxt
 
     if (stock <= 0){
         cantidad = 0
+        botonMainTxt = "Sin stock"
 
         return(
             <div className="itemCount__div ">
@@ -13,20 +17,23 @@ const ItemCount = ({ stock, prod}) => {
 
                 <div className="itemCount__botoncitos">
 
-                    <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown">-</button>
+                    {/* <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown">-</button> */}
     
                     <p className="txtMed">{cantidad}</p>
     
-                    <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown">+</button>
+                    {/* <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown">+</button> */}
                     
                 </div>
 
-                <button className="txtCenter comprarbtn btn btn-outline-light txtSmall boton__responsive bgBrown">Agregar al carrito</button>
+                <button className="txtCenter comprarbtn btn btn-outline-dark txtSmall boton__responsive">{botonMainTxt}</button>
 
             </div>
         )
 
     }else{
+
+        botonMainTxt = "Agregar al carrito"
+
         const agregar = () => {
             setCantidad(cantidad + 1)
         }
@@ -36,9 +43,9 @@ const ItemCount = ({ stock, prod}) => {
         }
     
         cantidad < 0 ? cantidad = 0 : console.log() 
-
+    
         cantidad > stock ? cantidad = stock : console.log() 
-
+    
         const addOnCart = () => {
             cantidad > 0 ? console.log("Estas añadiendo " + cantidad.valueOf() + " " + prod.valueOf() + " a tu carrito.") : console.log()
         }
@@ -57,7 +64,7 @@ const ItemCount = ({ stock, prod}) => {
                     
                 </div>
 
-                <button className="txtCenter comprarbtn btn btn-outline-light txtSmall boton__responsive bgBrown" onClick={addOnCart}>Agregar al carrito</button>
+                <button className="txtCenter comprarbtn btn btn-outline-light txtSmall boton__responsive bgBrown" onClick={addOnCart}>{botonMainTxt}</button>
 
             </div>
         )

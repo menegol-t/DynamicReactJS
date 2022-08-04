@@ -1,6 +1,6 @@
 [
-    {"nombre": "Dijon", "precio": "$7.500,00" , "src": "img/dijon/dijon.jpg", "alt": "Anteojos de lente circular, madera rayada en rojo y negro.", "id": "dijonbtn", "figure": "figureDijon"},
-    {"nombre": "Le mans", "precio": "$7.599,99" , "src": "img/lemans/lemans10.JPG", "alt": "Anteojos de lente cuadrado, color madera oscura.", "id": "lemansbtn", "figure": "figureLemans"},
-    {"nombre": "Lyon", "precio": "$7.199,99" , "src": "img/lyon/lyon.jpg", "alt": "Anteojos de lente ovalado, madera clara.", "id": "lyonbtn", "figure": "figureLyon"},
-    {"nombre": "Nantes", "precio": "$7.500,00" , "src": "img/nantes/nantes12.JPG", "alt": "Anteojos de lente curvilineo, madera oscura.", "id": "nantesbtn", "figure": "figureNantes"}
+    {"nombre": "Dijon Rayados Rojo y Negro", "stock": 2, "precio": "$7.500,00" , "src": "img/dijon/dijon.jpg", "src2": "../../img/dijon/dijon2.jpeg","alt": "Anteojos de lente circular, madera rayada en rojo y negro.", "id": 1, "figure": "figureDijon", "descr": "Anteojos de lente circular, color negro. Marco rayado en rojo y negro con patas color madera clara. Únicos. "},
+    {"nombre": "Le mans Oscuros", "stock": 2, "precio": "$7.599,99" , "src": "img/lemans/lemans10.JPG", "src2": "../img/lemans/lemans2.jpeg", "alt": "Anteojos de lente cuadrado, color madera oscura.", "id": 2, "figure": "figureLemans", "descr": "Anteojos de lente cuadrado, con degradé amarillo. Marco de madera oscura, con patas de madera clara. Clásicos."},
+    {"nombre": "Lyon Claros", "stock": 2, "precio": "$7.199,99" , "src": "img/lyon/lyon.jpg", "src2": "../img/lyon/lyon2.jpeg", "alt": "Anteojos de lente ovalado, madera clara.", "id": 3, "figure": "figureLyon", "descr": "Anteojos de lente ovalado, con degradé amarillo. Marco y patas de madera clara. Sofisticados."},
+    {"nombre": "Nantes Oscuros", "stock": 2, "precio": "$7.500,00" , "src": "img/nantes/nantes12.JPG","src2": "../img/nantes/nantes2.jpeg", "alt": "Anteojos de lente curvilineo, madera oscura.", "id": 4, "figure": "figureNantes", "descr": "Anteojos de lente semicircular, con degradé amarillo. Marco de madera oscura, con patas de madera clara. Modernos."}
 ]

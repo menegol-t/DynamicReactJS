@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
     const [itemDetail, setItemsDetails] = useState([]); /* El estado incial del array es vacio, sin info */
 
-    const getItem = () => {
-        setTimeout( () => {
-            fetch("./productos.json")
-            .then(anteojos => anteojos.json())
-            .then(anteojos => {
-                setItemsDetails(anteojos[0]) //Esta entrega pide solo 1 detalle
-            })}, 2000)
-    }
+    const { id } = useParams()
 
-    useEffect(() => {
-        getItem()
-    }, []); 
-    /* Hace que cuando se monta el componente llame a la funcion que espera 2 segundos
-    para traer el objeto [0] del JSON */
+    const getProductById = (id) => {
+        fetch("../../productos.json")
+        .then(anteojos => anteojos.json())
+        .then(anteojos =>
+            setItemsDetails(anteojos.filter((item)=>item.id === parseInt(id))[0])
+        )
+    } 
+    useEffect(()=>{
+        getProductById(id)
+    }, [id])
 
     return (
         <div>
             <ItemDetail itemDetail= {itemDetail}/>
+            {/* {itemDetail.length !== 0 ? (<ItemDetail itemDetail= {itemDetail}/>) : (<h2>Cargando...</h2>)} */}
         </div>
     )
 }
 
 export default ItemDetailContainer;
+

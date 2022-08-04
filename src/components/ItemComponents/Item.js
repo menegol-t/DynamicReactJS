@@ -1,8 +1,10 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 const Item = ({item}) => {
     /*Recibe "item" (de ItemList) que es cada objeto de un array siendo iterado. */
     return (
+        <Link to={`/item/${item.id}`}>
         <section>
 			<div className="container-fluid">
 				<div className="row" id="divProductos">
@@ -20,6 +22,7 @@ const Item = ({item}) => {
                 </div>
             </div>
         </section>
+        </Link>
     )
 }
 

@@ -1,5 +1,6 @@
 import "./NavBar.css"
 import CartWidget from "../CartWidget"
+import { Link } from "react-router-dom"
 
 const NavBar = ()=> {
     return (
@@ -12,9 +13,9 @@ const NavBar = ()=> {
 
             <div className="container-fluid">
 
-                <a className="navbar-brand" href="index.html">
+                <Link to="/" className="navbar-brand">
                     <h1 className="txtLeft fontSpecial animate__pulse ms-3">AUBIER</h1>
-                </a>
+                </Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -23,19 +24,19 @@ const NavBar = ()=> {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav m-auto mb-2 mb-lg-0 txtMed">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                                <Link to="/" className="nav-link active" aria-current="page">Inicio</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="pages/productos.html">Productos</a>
+                                <Link to="" className="nav-link active">Productos</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="pages/novedades.html">Novedades</a>
+                                <Link to="" className="nav-link active">Novedades</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="pages/nosotros.html">Nosotros</a>
+                                <Link to="" className="nav-link active">Nosotros</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="pages/faq.html">FAQ</a>
+                                <Link to="" className="nav-link active">FAQ</Link>
                             </li>
                         </ul>
                 </div>

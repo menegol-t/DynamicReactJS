@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./ItemCount.css"
 
-const ItemCount = ({ stock, prod}) => {
+const ItemCount = ({ stock}) => {
     /*Por ahora recibe el nombre del producto y el stock directo desde dentro de App.js*/
     let [cantidad, setCantidad] = useState(1)
 
@@ -13,7 +13,7 @@ const ItemCount = ({ stock, prod}) => {
 
         return(
             <div className="itemCount__div ">
-                <h2 className="txtCenter fontSpecial">{prod} "Stock: {stock}"</h2>
+                <h2 className="txtCenter fontSpecial">Stock: {stock}</h2>
 
                 <div className="itemCount__botoncitos">
 
@@ -47,12 +47,12 @@ const ItemCount = ({ stock, prod}) => {
         cantidad > stock ? cantidad = stock : console.log() 
     
         const addOnCart = () => {
-            cantidad > 0 ? console.log("Estas añadiendo " + cantidad.valueOf() + " " + prod.valueOf() + " a tu carrito.") : console.log()
+            cantidad > 0 ? console.log("Estas añadiendo " + cantidad.valueOf() + " a tu carrito.") : console.log()
         }
-
+        // + prod.valueOf() + 
         return(
             <div className="itemCount__div ">
-                <h2 className="txtCenter fontSpecial">{prod} "Stock: {stock}"</h2>
+                <h2 className="txtCenter fontSpecial"> Stock: {stock}</h2>
 
                 <div className="itemCount__botoncitos">
 

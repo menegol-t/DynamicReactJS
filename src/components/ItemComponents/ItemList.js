@@ -7,13 +7,18 @@ const ItemList = ({ items }) => {
 
     console.log(items)
     return (
-        <div>
-            {items.map((item) => 
-                <Item key={item.id} item={item}/>
-            )}
-            {/*Por cada objeto que recibe del array, lo mete en un Item con
-            su propia key, y pasa el objeto indiviaulmente al componente Item. */}
-        </div>
+        <section>
+            <div className="container-fluid">
+                <div className="row" id="divProductos">
+                    {items.map((item) => 
+                        <Item key={item.id} item={item}/>
+                    )}
+                    {/*Por cada objeto que recibe del array, lo mete en un Item con
+                    su propia key, y pasa el objeto indiviaulmente al componente Item. */}
+                </div>
+            </div>
+        </section>
+        
     )
 }
 

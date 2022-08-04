@@ -24,19 +24,19 @@ const NavBar = ()=> {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav m-auto mb-2 mb-lg-0 txtMed">
                             <li className="nav-item">
-                                <Link to="/" className="nav-link active" aria-current="page">Inicio</Link>
+                                <Link to="/" className="nav-link active" aria-current="page">Productos</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="" className="nav-link active">Productos</Link>
+                                <Link to="/category/dijon" className="nav-link active">Dijon</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="" className="nav-link active">Novedades</Link>
+                                <Link to="/category/nantes" className="nav-link active">Nantes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="" className="nav-link active">Nosotros</Link>
+                                <Link to="/category/lemans" className="nav-link active">Le Mans</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="" className="nav-link active">FAQ</Link>
+                                <Link to="/category/lyon" className="nav-link active">Lyon</Link>
                             </li>
                         </ul>
                 </div>

@@ -23,8 +23,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-        <ItemCount stock={10} prod="Dijon"/>
-        <ItemCount stock={0} prod="Le Mans"/>
-        <ItemCount stock={7} prod="Lyon"/> */

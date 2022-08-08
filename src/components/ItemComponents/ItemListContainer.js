@@ -17,11 +17,17 @@ const ItemListContainer = () => {
                 }else{
                     setItems(anteojos)
                 }
-            })}, [category]); 
+            })
+
+            return()=>{
+                setItems([])
+            }
+
+        }, [category]); 
 
     return (
         <main>
-            <ItemList items={items}/> {/*items es un array vacio hasta que se haga el fetch*/}
+            <ItemList items={items}/> 
         </main>
     )
 }

@@ -15,8 +15,12 @@ const ItemDetailContainer = () => {
             setItemsDetails(anteojos.filter((item)=>item.id === parseInt(id))[0])
         )
     } 
+
     useEffect(()=>{
         getProductById(id)
+        return()=>{
+            setItemsDetails([])
+        }    
     }, [id])
 
     return (

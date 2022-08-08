@@ -11,7 +11,7 @@ const Item = ({item}) => {
                     <Link to={`/item/${item.id}`}>
                         <img src={item.src} alt={item.alt} className="scale2 img-fluid"/>
                     </Link>
-                    <figcaption className="txtCenter mt-3 fontSpecial txtMed">{item.nombre} <br/> {item.precio}</figcaption>
+                    <figcaption className="txtCenter mt-5 fontSpecial txtMed ">{item.nombre} <br/> {item.precio}</figcaption>
                         <div className="text-center bgNormal">
                             <div className="card-body noneBorder">
                                 <Link to={`/item/${item.id}`}>

@@ -21,8 +21,8 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail itemDetail= {itemDetail}/>
-            {/* {itemDetail.length !== 0 ? (<ItemDetail itemDetail= {itemDetail}/>) : (<h2>Cargando...</h2>)} */}
+            {/* <ItemDetail itemDetail= {itemDetail}/> */}
+            {itemDetail.length !== 0 ? (<ItemDetail itemDetail={itemDetail}/>) : (<h2>Cargando...</h2>)}
         </div>
     )
 }

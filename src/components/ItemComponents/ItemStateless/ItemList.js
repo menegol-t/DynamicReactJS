@@ -4,8 +4,6 @@ import Item from "./Item"
 const ItemList = ({ items }) => {
     /*Recibe items de ItemListContainer que los primeros dos segundos es
     un array vacio, y despues se rellena con la info de un JSON*/
-
-    console.log(items)
     return (
         <section>
             <div className="container-fluid">

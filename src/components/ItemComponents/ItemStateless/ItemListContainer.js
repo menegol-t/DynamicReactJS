@@ -6,7 +6,6 @@ const ItemListContainer = () => {
 
     const [items, setItems] = useState([]); /* El estado incial del array es vacio, sin info */
     const {category} = useParams()
-    console.log(category);
 
     useEffect(() => {
             fetch("../productos.json")

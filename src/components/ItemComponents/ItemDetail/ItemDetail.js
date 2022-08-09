@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ItemDetail = ({itemDetail}) => {
     /*Recibe "item" (de ItemList) que es cada objeto de un array siendo iterado. */
-    const navigate = useNavigate
+    const navigate = useNavigate()
 
     const [count, setcount] = useState(0);
 

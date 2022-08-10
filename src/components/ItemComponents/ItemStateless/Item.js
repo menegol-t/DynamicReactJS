@@ -7,7 +7,7 @@ const Item = ({item}) => {
         
         
             <article className='col-md-6'>
-                <figure className="width2" id={item.figure}>
+                <figure className="width2" id={item.id}>
                     <Link to={`/item/${item.id}`}>
                         <img src={item.src} alt={item.alt} className="scale2 img-fluid"/>
                     </Link>

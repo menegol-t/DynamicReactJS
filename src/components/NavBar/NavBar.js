@@ -1,4 +1,3 @@
-import "./NavBar.css"
 import CartWidget from "../Cart/CartWidget"
 import { Link } from "react-router-dom"
 
@@ -48,7 +47,4 @@ const NavBar = ()=> {
 }
 export default NavBar
 
-/*<div id="formBusqueda" className="d-flex me-3 form__width">
-<input id="inputBusqueda" className="me-2 txtSmall" type="text" placeholder="Haga click en busqueda..." aria-label="Search" />
-<button id="inputBoton" className="btn btn-outline-light btn-lg" type="button"> <span className="txtSmall">Búqueda</span></button>
-</div> */
+/**/

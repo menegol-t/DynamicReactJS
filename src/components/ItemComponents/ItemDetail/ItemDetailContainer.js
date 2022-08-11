@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-    const [itemDetail, setItemsDetails] = useState([]); /* El estado incial del array es vacio, sin info */
+    const [itemDetail, setItemsDetails] = useState([]); 
 
     const { id } = useParams()
 
@@ -32,4 +32,7 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer;
-
+/*Envia individualmente cada producto para que se les haga un detalle. Hace un fetch de los productos
+L12 cuyo ID coincida con el router-DOM L15. Escucha por cualquier cambio para mostrar otro producto 
+en el router-DOM L19. Pone un estado de cargando o envia los productos que encontro a ItemDetail L29.
+*/

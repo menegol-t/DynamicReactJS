@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ItemDetail = ({itemDetail}) => {
-    /*Recibe "item" (de ItemList) que es cada objeto de un array siendo iterado. */
     const navigate = useNavigate()
 
     const [count, setcount] = useState(0);
@@ -38,3 +37,6 @@ const ItemDetail = ({itemDetail}) => {
 }
 
 export default ItemDetail;
+/*Recibe de ItemDetailContainer L6 un item con ID unico. Recibe el numero en el contador de ItemCount
+L11. Le da formato al detalle del producto L17 y le pasa Info del stock del item unico al ItemCount
+L28*/

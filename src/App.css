@@ -1,4 +1,4 @@
-/* Nada mas van las reglas generales del Css accesibles desde cualquier pagina. */
+/* reglas generales del Css accesibles desde cualquier pagina. */
 
 .txtSmall {
   font-size: 1.5rem; }
@@ -107,12 +107,60 @@
 #oops {
   background-color: white !important; }
 
-/* Productos*/
+/* NavBar*/
+nav a h1 {
+  color: black;
+  font-weight: 500;
+  font-size: 6rem;
+  display: inline-block;
+  width: auto;
+  line-height: 1.2;
+  animation-name: txtAlpha;
+  animation-duration: 2.5s; }
+nav div div ul {
+  list-style-type: none;
+  width: auto;
+  white-space: nowrap;
+  animation-name: txtAlpha;
+  animation-duration: 2s; }
+  nav div div ul nav div div ul li a {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s; }
+.nav-link:hover {
+  color: white !important;
+  background-size: 100% 2px; }
+nav div div img {
+  display: inline-block;
+  vertical-align: middle;
+  animation-name: txtAlpha;
+  animation-duration: 2s; }
 
+#nav__sticky {
+  border: none;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+  width: auto; }
 
+/* Productos e itemCount*/
 section div div article figure {
   margin: 4%;
   display: inline-block;}
 
 section div div article figure img {
   width: 100%; }
+
+.itemCount__botoncitos {
+  margin: 0.5% auto;
+  display: flex;
+  justify-content: space-evenly;}
+
+.itemCount__div {
+    width: 100%;
+    align-content: center;}

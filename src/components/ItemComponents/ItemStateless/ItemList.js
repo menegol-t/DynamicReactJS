@@ -2,8 +2,6 @@ import Item from "./Item"
 
 
 const ItemList = ({ items }) => {
-    /*Recibe items de ItemListContainer que los primeros dos segundos es
-    un array vacio, y despues se rellena con la info de un JSON*/
     return (
         <section>
             <div className="container-fluid">
@@ -21,3 +19,7 @@ const ItemList = ({ items }) => {
 }
 
 export default ItemList
+
+/*Recibe items de ItemListContainer L4. Los mete en una caja general de boostrap que viene 
+por CDN en el HTML principal, y se los envia a Item uelos mete en una caja individual para
+cada uno L10.*/

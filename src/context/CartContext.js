@@ -15,7 +15,7 @@ const CartProvider = ({children}) => {
 
     const addToCart = (item, cantidadAlCarrito) => {
 
-        const itemDuplicadoIndex = cart.findIndex((itemInTheCart) => itemInTheCart.id == item.id)
+        const itemDuplicadoIndex = cart.findIndex((itemInTheCart) => itemInTheCart.id === item.id)
 
         if (cart.length === 0){
             const itemToBeAdded = {
@@ -50,10 +50,10 @@ const CartProvider = ({children}) => {
         return accumulator + object.cantidadAlCarrito;
     }, 0)
 
-    const totalPrice = () => cart.reduce((accumulator, prod) => {
-        return accumulator += prod.precio * prod.cantidadAlCarrito
-    }, 0);
-    
+    // const totalPrice = cart.reduce((accumulator, prod) => {
+    //     return accumulator += prod.precio * prod.cantidadAlCarrito
+    // }, 0);
+
 
     return(
         <CartContext.Provider value={{cart, isInCart, cleanCart, addToCart, removeFromCart, 

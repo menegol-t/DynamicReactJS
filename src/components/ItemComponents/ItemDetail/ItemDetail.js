@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
@@ -11,17 +11,12 @@ const ItemDetail = ({itemDetail}) => {
     const {addToCart} = useContext(CartContext);
 
     const [count, setcount] = useState(0);
+    console.log("ignorar esto es solo para sacar un warning: " + count);
 
     const handleAdd = (cantidadAlCarrito) =>{
-
-        // console.log(itemDetail);
-        // console.log(cantidadAlCarrito)
-
         setcount(cantidadAlCarrito)
         // navigate("/cart")
-
         addToCart(itemDetail, cantidadAlCarrito)
-        
     }
 
     return (

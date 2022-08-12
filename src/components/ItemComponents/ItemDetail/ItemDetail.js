@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { CartContext } from '../../../context/CartContext';
+
+// import { useNavigate } from 'react-router-dom';
 
 const ItemDetail = ({itemDetail}) => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+
+    const {addToCart} = useContext(CartContext);
 
     const [count, setcount] = useState(0);
 
-    const handleAdd = (cantidadCarrito) =>{
-        console.log(cantidadCarrito)
-        setcount(cantidadCarrito)
-        navigate("/cart")
-        console.log(count);
+    const handleAdd = (cantidadAlCarrito) =>{
+
+        // console.log(itemDetail);
+        // console.log(cantidadAlCarrito)
+
+        setcount(cantidadAlCarrito)
+        // navigate("/cart")
+
+        addToCart(itemDetail, cantidadAlCarrito)
+        
     }
+
     return (
         <section>
 			<div className="container-fluid">

@@ -2,9 +2,7 @@ import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
-
 // import { useNavigate } from 'react-router-dom';
-
 const ItemDetail = ({itemDetail}) => {
     // const navigate = useNavigate()
 
@@ -42,6 +40,6 @@ const ItemDetail = ({itemDetail}) => {
 }
 
 export default ItemDetail;
-/*Recibe de ItemDetailContainer L6 un item con ID unico. Recibe el numero en el contador de ItemCount
-L11. Le da formato al detalle del producto L17 y le pasa Info del stock del item unico al ItemCount
-L28*/
+/*Recibe de ItemDetailContainer L6 un item con ID unico. Recibe el numero que haya en el contador de 
+ItemCount L14. Le da formato al detalle del producto L120 y le pasa Info del stock del item unico al 
+ItemCount L31*/

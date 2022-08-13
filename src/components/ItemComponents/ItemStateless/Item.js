@@ -23,4 +23,4 @@ const Item = ({item}) => {
 
 export default Item;
 /*Recibe item despues de que ItemList los metiera en una caja general L4, y se encaga de 
-meterlos en cajas individuales L5 compatibles con boostrap por CDN en HTML principal.*/
+meterlos en cajas individuales compatibles con boostrap por CDN en HTML principal.*/

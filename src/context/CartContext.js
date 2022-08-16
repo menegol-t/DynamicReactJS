@@ -41,7 +41,7 @@ const CartProvider = ({children}) => {
             }else{
                 console.log("No hay suficiencte stock para añadir esa cantidad al carrito.");
             }
-
+ 
         }else{
 
             const itemToBeAdded = { ...item, cantidadAlCarrito: cantidadAlCarrito }
@@ -62,7 +62,7 @@ const CartProvider = ({children}) => {
     }, 0)
 
     const totalPrice = cart.reduce((accumulator, object) => {
-        return accumulator += object.precio * object.cantidadAlCarrito
+        return accumulator + object.precio2 * object.cantidadAlCarrito
     }, 0);
 
 

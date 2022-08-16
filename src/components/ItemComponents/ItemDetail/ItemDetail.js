@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const ItemDetail = ({itemDetail}) => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const {addToCart} = useContext(CartContext);
 
@@ -13,7 +13,7 @@ const ItemDetail = ({itemDetail}) => {
 
     const handleAdd = (cantidadAlCarrito) =>{
         setcount(cantidadAlCarrito)
-        // navigate("/cart")
+        navigate("/cart")
         addToCart(itemDetail, cantidadAlCarrito)
     }
 

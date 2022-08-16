@@ -1,7 +1,13 @@
 import CartWidget from "../Cart/CartWidget"
 import { Link } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
+import { useContext } from "react";
 
 const NavBar = ()=> {
+    const {cart} = useContext(CartContext)
+    let condition
+    cart.length === 0 ? condition = false : condition = true
+
     return (
     <>
         <div className="div__header" id="cartel">
@@ -39,7 +45,7 @@ const NavBar = ()=> {
                             </li>
                         </ul>
                 </div>
-                <CartWidget/>
+                {condition ? <Link to="/cart" className="nav-link active"><CartWidget/></Link> : <></>}
             </div>
         </nav>
     </>

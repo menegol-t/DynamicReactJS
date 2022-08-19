@@ -1,24 +1,68 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const {category} = useParams()
 
-    useEffect(() => {
-            fetch("../productos.json")
-            .then(anteojos => anteojos.json())
-            .then((anteojos) => {
-                if(category){
-                    setItems(anteojos.filter((product) => product.categoria === category))
-                }else{
-                    setItems(anteojos)
-                }
-            })
+    // useEffect(() => {
+    //     const db = getFirestore()
+    //     const itemsCollectionCategory = collection(db, "items")
+    //     getDocs(itemsCollectionCategory)
+    //       .then((snapshot) => { 
+    //         const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+    //         // if(category){
+    //         //     setItems(data.filter((product) => product.categoria === category))
+    //         // }else{
+    //             setItems(data)
+    //         // }
+    //        })
+    //       .catch((error) => console.error(error))
+    
+    //   }, []);
 
-    }, [category]); 
+    useEffect(() => {
+        const db = getFirestore()
+        const itemsCollectionCategory = collection(db, "items")
+        getDocs(itemsCollectionCategory)
+            .then((snapshot) => { 
+            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+                setItems(data)
+            })
+            .catch((error) => console.error(error))
+    
+        }, []);
+
+    useEffect(() => {
+    if(category){
+        const db = getFirestore()
+        const itemsCollectionCategory = query(
+            collection(db, "items"), where("categoria", "==", category)
+        )
+        getDocs(itemsCollectionCategory)
+            .then((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+                setItems(data)
+                console.log(data);
+            })
+            .catch((error) => console.error(error))
+    }},[category]);
+
+    // useEffect(() => {
+    //         fetch("../productos.json")
+    //         .then(anteojos => anteojos.json())
+    //         .then((anteojos) => {7
+    //             if(category){
+    //                 setItems(anteojos.filter((product) => product.categoria === category))
+    //             }else{
+    //                 setItems(anteojos)
+    //             }
+    //         })
+
+    // }, [category]); 
 
     return (
         <main>

@@ -3,7 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
-const ItemDetail = ({itemDetail}) => {
+const ItemDetail = ({itemsDetails}) => {
     const navigate = useNavigate()
 
     const {addToCart} = useContext(CartContext);
@@ -14,7 +14,7 @@ const ItemDetail = ({itemDetail}) => {
     const handleAdd = (cantidadAlCarrito) =>{
         setcount(cantidadAlCarrito)
         navigate("/cart")
-        addToCart(itemDetail, cantidadAlCarrito)
+        addToCart(itemsDetails, cantidadAlCarrito)
     }
 
     return (
@@ -23,12 +23,12 @@ const ItemDetail = ({itemDetail}) => {
 				<div className="row" id="divProductos">
                     <article className='col-md-6'>
                         <figure className="width2">
-                            <img src={itemDetail.src2} alt={itemDetail.alt} className="scale2 img-fluid"/>
-                            <figcaption className="txtCenter mt-5 fontSpecial txtMed">{itemDetail.nombre} <br/> {itemDetail.precio}</figcaption>
+                            <img src={itemsDetails.src2} alt={itemsDetails.alt} className="scale2 img-fluid"/>
+                            <figcaption className="txtCenter mt-5 fontSpecial txtMed">{itemsDetails.nombre} <br/> {itemsDetails.precio}</figcaption>
                                 <div className="text-center bgNormal">
                                     <div className="card-body noneBorder">
-                                        <p>{itemDetail.descr}</p>
-                                        <ItemCount stock={itemDetail.stock} onAdd={handleAdd}/>
+                                        <p>{itemsDetails.descr}</p>
+                                        <ItemCount stock={itemsDetails.stock} onAdd={handleAdd}/>
                                     </div>
                                 </div>
                         </figure>

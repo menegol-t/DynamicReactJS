@@ -26,8 +26,8 @@ const NavBar = ()=> {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav m-auto mb-2 mb-lg-0 txtMed">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent ">
+                        <ul className="navbar-nav m-auto mb-2 mb-lg-0 txtMed ">
                             <li className="nav-item">
                                 <Link to="/" className="nav-link active" aria-current="page">Productos</Link>
                             </li>
@@ -45,7 +45,7 @@ const NavBar = ()=> {
                             </li>
                         </ul>
                 </div>
-                {condition ? <Link to="/cart" className="nav-link active"><CartWidget/></Link> : <></>}
+                {condition ? <Link to="/cart" className="nav-link active me-3 width4"><CartWidget/></Link> : <></>}
             </div>
         </nav>
     </>

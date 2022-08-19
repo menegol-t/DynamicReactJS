@@ -1,7 +1,11 @@
 import React from 'react';
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const Item = ({item}) => {
+    const navigate = useNavigate()
+    const handleClick = () =>{
+        navigate(`/item/${item.id}`)
+    }
     return (
         <article className='col-md-6'>
             <figure className="width2" id={item.id}>
@@ -12,7 +16,7 @@ const Item = ({item}) => {
                     <div className="text-center bgNormal">
                         <div className="card-body noneBorder">
                             <Link to={`/item/${item.id}`}>
-                                <button id={item.id} type="button" className="comprarbtn btn btn-outline-light w-25 boton__responsive bgBrown"> <span className="txtSmall2 ">Ver Detalle</span></button>
+                                <button id={item.id} type="button" className="comprarbtn btn btn-outline-light w-25 boton__responsive bgBrown" onClick={handleClick}> <span className="txtSmall2 ">Ver Detalle</span></button>
                             </Link>
                         </div>
                     </div>

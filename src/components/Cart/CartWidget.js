@@ -7,8 +7,8 @@ const CartWidget = () =>{
 
     return(
         <div className="">
-            <img src={CartWidgetIMG} className="d-flex width4 " alt="Carrito de compras."/>
-            <h2 className="txtMed2">{cantInCart}</h2>
+            <img src={CartWidgetIMG} className="d-flex width3 " alt="Carrito de compras."/>
+            <h2 className="txtMed">{cantInCart}</h2>
         </div>
     )
 }

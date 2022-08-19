@@ -8,6 +8,8 @@ const CartContainer = () => {
     
     const {finalPrice} = useContext(CartContext);
 
+    const {cleanCart} = useContext(CartContext)
+
     const impuestoIva = finalPrice * 0.21
 
     const precioFinal = impuestoIva + finalPrice
@@ -16,7 +18,7 @@ const CartContainer = () => {
     <section className="h-100 h-custom mb-5 mt-5">
       <div className="container h-100 py-5">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-8 ">
+          <div className="col-10 ">
             <div className="table-responsive">
               <table className="table">
                 <thead>
@@ -33,6 +35,13 @@ const CartContainer = () => {
                   
                 </tbody>
               </table>
+            </div>
+            <div className="col-md-6  offset-md-3 mb-5 mt-5 txtCenter">
+              <button type="button" className="btn btn-info btn-block btn-lg" onClick={()=> cleanCart()}>
+                <div className="d-flex justify-content-between">
+                  <span className='txtSmall2'>Limpiar carrito</span>
+                </div>
+              </button>
             </div>
             <div className="col-md-6 offset-md-3">
               <div className="d-flex justify-content-between" >

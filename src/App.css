@@ -123,7 +123,7 @@ nav div div ul {
   white-space: nowrap;
   animation-name: txtAlpha;
   animation-duration: 2s; }
-  nav div div ul nav div div ul li a {
+  nav div div ul li a {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
     background-repeat: no-repeat;
@@ -132,7 +132,7 @@ nav div div ul {
 .nav-link:hover {
   color: white !important;
   background-size: 100% 2px; }
-nav div div img {
+nav div div a {
   display: inline-block;
   vertical-align: middle;
   animation-name: txtAlpha;

@@ -42,7 +42,6 @@ const ItemDetailContainer = () => {
             }
             
             setItemsDetails(data)
-            console.log(data)
             }
         })
         .catch((error) => console.error(error))

@@ -6,8 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./context/CartContext";
 
-function App() {
 
+
+function App() {
+  
   return (
     <div>
       <BrowserRouter>
@@ -27,3 +29,12 @@ function App() {
 }
 
 export default App;
+
+/* Funcion que añade mas productos de un JSON. 
+ useEffect(() => {
+    const db = getFirestore()
+	  const itemsCollection = collection(db, "items")
+		
+		fetch("../../productos.json").then(anteojos => anteojos.json()).then(anteojos => anteojos.map((newItem) => {addDoc(itemsCollection, newItem).then(({id}) => console.log({id}))}))
+  },[])
+*/

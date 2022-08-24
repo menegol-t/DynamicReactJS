@@ -2,8 +2,16 @@ import React from 'react';
 import { CartContext } from "../../context/CartContext"
 import { useContext } from "react";
 import CartItems from './CartItems';
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import Swal from "sweetalert2"
 
 const CartContainer = () => {
+    const user = {
+      name: "Coder",
+      phone: 112233,
+      email: "coderHouse@mail.com"
+    }
+
     const {cart} = useContext(CartContext)
     
     const {finalPrice} = useContext(CartContext);
@@ -13,6 +21,26 @@ const CartContainer = () => {
     const impuestoIva = finalPrice * 0.21
 
     const precioFinal = impuestoIva + finalPrice
+
+    const sendOrder = () => {
+      const newOrder = {
+        buyer: user, 
+        items: cart, 
+        date: new Date().toString(),
+        total: precioFinal,
+      }
+      const db = getFirestore()
+      const orderCollection = collection(db, "order")
+      addDoc(orderCollection, newOrder).then(({id}) => 
+      {console.log({id})
+      Swal.fire({
+        icon: 'success',
+        title: `Se registro tu compra! Id: ${id}`,
+        showConfirmButton: true,
+      })
+      }).catch((error) => console.error(error))
+      console.log(newOrder);
+    }
 
     return (
     <section className="h-100 h-custom mb-5 mt-5">
@@ -53,7 +81,7 @@ const CartContainer = () => {
                 <p className="mb-2">Impuestos (IVA)</p>
                 <p className="mb-2">${impuestoIva}</p>
               </div>
-              <button type="button" className="btn bgBrown btn-block btn-lg">
+              <button type="button" className="btn bgBrown btn-block btn-lg" onClick={sendOrder}>
                 <div className="d-flex justify-content-between">
                   <span className='txtSmall2'>Terminar la compra</span>
                   <span className='txtSmall2'>${precioFinal}</span>
@@ -68,3 +96,14 @@ const CartContainer = () => {
 }
 
 export default CartContainer;
+
+/*function toast(){
+    Toastify({
+        text: "Te avisaremos cuando se habiliten las compras!",
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+            background: "#E0A367",
+          }
+    }).showToast();
+} */

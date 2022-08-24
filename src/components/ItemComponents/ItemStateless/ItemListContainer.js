@@ -46,7 +46,6 @@ const ItemListContainer = () => {
             .then((snapshot) => {
                 const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
                 setItems(data)
-                console.log(data);
             })
             .catch((error) => console.error(error))
     }},[category]);

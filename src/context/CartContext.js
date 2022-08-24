@@ -22,7 +22,6 @@ const CartProvider = ({children}) => {
             const itemToBeAdded = { ...item, cantidadAlCarrito: cantidadAlCarrito }
             
             setCart([itemToBeAdded])
-            console.log(itemToBeAdded);
             return
 
         }else if(itemDuplicadoIndex !== -1){

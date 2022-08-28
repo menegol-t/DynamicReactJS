@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import { CartContext } from '../../../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const ItemDetail = ({itemsDetails}) => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const {addToCart} = useContext(CartContext);
 
@@ -13,7 +16,7 @@ const ItemDetail = ({itemsDetails}) => {
 
     const handleAdd = (cantidadAlCarrito) =>{
         setcount(cantidadAlCarrito)
-        navigate("/cart")
+        // navigate("/cart")
         addToCart(itemsDetails, cantidadAlCarrito)
     }
 
@@ -29,6 +32,17 @@ const ItemDetail = ({itemsDetails}) => {
                                     <div className="card-body noneBorder">
                                         <p>{itemsDetails.descr}</p>
                                         <ItemCount stock={itemsDetails.stock} onAdd={handleAdd}/>
+                                        <ToastContainer
+                                            position="bottom-right"
+                                            autoClose={3000}
+                                            hideProgressBar={false}
+                                            newestOnTop={false}
+                                            closeOnClick
+                                            rtl={false}
+                                            pauseOnFocusLoss
+                                            draggable
+                                            pauseOnHover
+                                        />
                                     </div>
                                 </div>
                         </figure>
@@ -41,5 +55,5 @@ const ItemDetail = ({itemsDetails}) => {
 
 export default ItemDetail;
 /*Recibe de ItemDetailContainer L6 un item con ID unico. Recibe el numero que haya en el contador de 
-ItemCount L14. Le da formato al detalle del producto L120 y le pasa Info del stock del item unico al 
-ItemCount L31*/
+ItemCount L15 y se encarga de agregarlo al carrito L18. Le da formato al detalle del producto L21 y 
+le pasa Info del stock del item unico al ItemCount L32, asi como la funcion para añadir al carrito.*/

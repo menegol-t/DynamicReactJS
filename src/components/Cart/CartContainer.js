@@ -36,7 +36,7 @@ const CartContainer = () => {
       Swal.fire({
         icon: 'success',
         title: `Se registro tu compra! Id: ${id}`,
-        showConfirmButton: true,
+        showConfirmButton: true
       })
       }).catch((error) => console.error(error))
       console.log(newOrder);
@@ -96,14 +96,3 @@ const CartContainer = () => {
 }
 
 export default CartContainer;
-
-/*function toast(){
-    Toastify({
-        text: "Te avisaremos cuando se habiliten las compras!",
-        duration: 3000,
-        gravity: "bottom",
-        style: {
-            background: "#E0A367",
-          }
-    }).showToast();
-} */

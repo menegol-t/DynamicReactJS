@@ -16,7 +16,7 @@ const Item = ({item}) => {
                     <div className="text-center bgNormal">
                         <div className="card-body noneBorder">
                             <Link to={`/item/${item.id}`}>
-                                <button id={item.id} type="button" className="comprarbtn btn btn-outline-light w-25 boton__responsive bgBrown" onClick={handleClick}> <span className="txtSmall2 ">Ver Detalle</span></button>
+                                <button id={item.id} type="button" className="comprarbtn btn btn-outline-light w-auto boton__responsive bgBrown" onClick={handleClick}> <span className="txtSmall2 ">Ver Detalle</span></button>
                             </Link>
                         </div>
                     </div>

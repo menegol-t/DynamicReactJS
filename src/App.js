@@ -30,7 +30,7 @@ function App() {
 
 export default App;
 
-/* Funcion que añade mas productos de un JSON. 
+/* Funcion que añade mas productos de un JSON que yo le diga: 
  useEffect(() => {
     const db = getFirestore()
 	  const itemsCollection = collection(db, "items")

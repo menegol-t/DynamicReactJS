@@ -30,6 +30,9 @@
 .txtBlack {
   color: black; }
 
+.anularStretch {
+  align-content: center; }
+
 .bgBrown {
   background-color: #E0A367; }
 
@@ -85,8 +88,7 @@
   width: 40%; }
 
 .width6 {
-  width: 50%
-} 
+  width: 50%; } 
 
 .img__margin {
   margin-right: 10%; }
@@ -132,11 +134,6 @@ nav div div ul {
 .nav-link:hover {
   color: white !important;
   background-size: 100% 2px; }
-nav div div a {
-  display: inline-block;
-  vertical-align: middle;
-  animation-name: txtAlpha;
-  animation-duration: 2s; }
 
 #nav__sticky {
   border: none;

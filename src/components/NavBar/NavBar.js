@@ -5,8 +5,6 @@ import { useContext } from "react";
 
 const NavBar = ()=> {
     const {cart} = useContext(CartContext)
-    let condition
-    cart.length === 0 ? condition = false : condition = true
 
     return (
     <>
@@ -45,12 +43,10 @@ const NavBar = ()=> {
                             </li>
                         </ul>
                 </div>
-                {condition ? <Link to="/cart" className="nav-link active me-3 width4"><CartWidget/></Link> : <></>}
+                {cart.length === 0 ? <></> : <Link to="/cart" className="nav-link active me-5 width4"><CartWidget/></Link>}
             </div>
         </nav>
     </>
     )
 }
 export default NavBar
-
-/**/

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import ItemLoading from "../ItemLoading";
 
 const ItemDetailContainer = () => {
 
@@ -9,7 +10,47 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
-    // const getProductById = (id) => {
+    useEffect(() => {
+        const db = getFirestore()
+        const itemRef = doc(db, "items", `${id}`)
+
+        getDoc(itemRef)
+        .then((snapshot) => { 
+
+            if (snapshot.exists()){
+            const data = {
+                id: snapshot.id,
+                ...snapshot.data()
+            }
+            setItemsDetails(data)
+            }
+        })
+        .catch((error) => console.error(error))
+
+    }, []);
+
+    useEffect(()=>{
+        return()=>{
+            setItemsDetails([])
+        }    
+    }, [id])
+
+    return (
+        <div>
+            {itemsDetails.length === 0 ? (<ItemLoading/>) : (<ItemDetail itemsDetails= {itemsDetails}/>) }
+        </div>
+    )
+}
+
+export default ItemDetailContainer;
+/*Envia individualmente cada producto para que se les haga un detalle. Busca los productos
+L12 cuyo ID coincida con el router-DOM L10, L14 & L16. Escucha cualquier cambio de ID L35, 
+desmonta L3 y muestra otro producto si se cambia el roter DOM. Pone un estado de cargando 
+o envia los productos que encontro a ItemDetail L39.
+*/
+
+//Funciones para mi debbuggeo
+// const getProductById = (id) => {
     //     fetch("../../productos.json")
     //     .then(anteojos => anteojos.json())
     //     .then(anteojos =>
@@ -28,42 +69,3 @@ const ItemDetailContainer = () => {
     //     })
     //     .catch((error) => console.error(error))
     // }
-
-    useEffect(() => {
-        const db = getFirestore()
-    
-        const itemRef = doc(db, "items", `${id}`)
-        getDoc(itemRef)
-        .then((snapshot) => { 
-            if (snapshot.exists()){
-            const data = {
-                id: snapshot.id,
-                ...snapshot.data()
-            }
-            
-            setItemsDetails(data)
-            }
-        })
-        .catch((error) => console.error(error))
-
-    }, []);
-
-    useEffect(()=>{
-        return()=>{
-            setItemsDetails([])
-        }    
-    }, [id])
-
-    return (
-        <div>
-            {/* <ItemDetail itemsDetails= {itemsDetails}/> */}
-            {itemsDetails.length === 0 ? (<h2>Cargando...</h2>) : (<ItemDetail itemsDetails= {itemsDetails}/>) }
-        </div>
-    )
-}
-
-export default ItemDetailContainer;
-/*Envia individualmente cada producto para que se les haga un detalle. Hace un fetch de los productos
-L12 cuyo ID coincida con el router-DOM L15. Escucha por cualquier cambio para mostrar otro producto 
-en el router-DOM L19. Pone un estado de cargando o envia los productos que encontro a ItemDetail L29.
-*/

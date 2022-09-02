@@ -161,3 +161,12 @@ section div div article figure img {
 .itemCount__div {
     width: 100%;
     align-content: center;}
+
+/*Empty cart */
+.emptyCart__displayFlex{
+  align-items: center;
+  flex-direction: column;}
+
+.displayFlex__Cart{
+  align-items: center;
+  flex-direction: row;}

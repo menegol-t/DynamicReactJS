@@ -38,7 +38,7 @@ const CartContainer = () => {
         title: `Se registro tu compra! Id: ${id}`,
         showConfirmButton: true
       })
-      }).catch((error) => console.error(error))
+      }).then(cleanCart).catch((error) => console.error(error))
       console.log(newOrder);
     }
 

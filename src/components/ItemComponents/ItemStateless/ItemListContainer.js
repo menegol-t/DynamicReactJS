@@ -8,28 +8,25 @@ const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const {category} = useParams()
+    console.log(category);
 
     useEffect(() => {
-        const db = getFirestore()
-        const itemsCollectionCategory = collection(db, "items")
-        getDocs(itemsCollectionCategory)
-            .then((snapshot) => { 
-            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-                setItems(data)
-            })
-            .catch((error) => console.error(error))
-    
-        }, []);
-
-    useEffect(() => {
+    const db = getFirestore()
     if(category){
-        const db = getFirestore()
         const itemsCollectionCategory = query(
             collection(db, "items"), where("categoria", "==", category)
         )
         getDocs(itemsCollectionCategory)
             .then((snapshot) => {
                 const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+                setItems(data)
+            })
+            .catch((error) => console.error(error))
+    }else{
+        const itemsCollectionCategory = collection(db, "items")
+        getDocs(itemsCollectionCategory)
+            .then((snapshot) => { 
+            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
                 setItems(data)
             })
             .catch((error) => console.error(error))

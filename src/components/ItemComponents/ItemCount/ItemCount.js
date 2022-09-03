@@ -16,11 +16,11 @@ const ItemCount = ({ stock, onAdd}) => {
 
                 <div className="itemCount__botoncitos">
 
-                    {/* <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown">-</button> */}
+                
     
                     <p className="txtMed">{cantidad}</p>
     
-                    {/* <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown">+</button> */}
+                    
                     
                 </div>
 
@@ -58,7 +58,7 @@ const ItemCount = ({ stock, onAdd}) => {
                     <button className="comprarbtn btn btn-outline-light h-25 txtSmall boton__responsive bgBrown" onClick={agregar}>+</button>
                     
                 </div>
-
+                
                 <button className="txtCenter comprarbtn btn btn-outline-light txtSmall boton__responsive bgBrown" onClick={() => onAdd(cantidad)}>{botonMainTxt}</button>
 
             </div>

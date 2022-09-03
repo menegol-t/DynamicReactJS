@@ -16,6 +16,15 @@ const CartProvider = ({children}) => {
         setCart([])
     }
 
+    const toastify = () => {toast.success("Vamos al carrito!", {
+        position: "bottom-right",
+        autoClose: 3500,
+        hideProgressBar: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+    })}
+
     const addToCart = (item, cantidadAlCarrito) => {
 
         const itemDuplicadoIndex = cart.findIndex((itemInTheCart) => itemInTheCart.id === item.id)
@@ -26,15 +35,7 @@ const CartProvider = ({children}) => {
             
             setCart([itemToBeAdded])
 
-            toast.success('Añadido al carrito!', {
-                position: "bottom-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-            });
+            toastify()
 
         }else if(itemDuplicadoIndex !== -1){
 
@@ -49,15 +50,7 @@ const CartProvider = ({children}) => {
                 setCart(cartCopy)
                 console.log(cartCopy)
 
-                toast.success('Añadido al carrito!', {
-                    position: "bottom-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined
-                })
+                toastify()
             
             }else{
                 Swal.fire({ icon: 'error', title: `No tenemos tanto stock!`, showConfirmButton: true})
@@ -72,15 +65,7 @@ const CartProvider = ({children}) => {
             setCart(cartCopy)
             console.log([cartCopy])
 
-            toast.success('Añadido al carrito!', {
-                position: "bottom-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-            })
+            toastify()
         }   
     }
     

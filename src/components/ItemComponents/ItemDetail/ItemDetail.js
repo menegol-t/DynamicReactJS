@@ -5,6 +5,7 @@ import { CartContext } from '../../../context/CartContext';
 // import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom"
 
 const ItemDetail = ({itemsDetails}) => {
     // const navigate = useNavigate()
@@ -35,18 +36,7 @@ const ItemDetail = ({itemsDetails}) => {
                                     <div className="card-body noneBorder">
                                         <p>{itemsDetails.descr}</p>
                                         <ItemCount stock={itemsDetails.stock} onAdd={handleAdd}/>
-                                        <ToastContainer
-                                            position="bottom-right"
-                                            autoClose={3000}
-                                            hideProgressBar={false}
-                                            newestOnTop={false}
-                                            closeOnClick
-                                            rtl={false}
-                                            pauseOnFocusLoss
-                                            draggable
-                                            pauseOnHover
-                                            limit={3}
-                                        />
+                                        <Link to="/cart"><ToastContainer/></Link>
                                     </div>
                                 </div>
                         </figure>

@@ -27,13 +27,11 @@ const ItemDetailContainer = () => {
         })
         .catch((error) => console.error(error))
 
-    }, []);
-
-    useEffect(()=>{
-        return()=>{
+        return(
             setItemsDetails([])
-        }    
-    }, [id])
+        )
+
+    }, [id]);
 
     return (
         <div>

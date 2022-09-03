@@ -5,12 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAe3YwkOjo_Gvlu-qdn6jZCMPsMbAsbOpA",
-    authDomain: "aubier-coderhousereact.firebaseapp.com",
-    projectId: "aubier-coderhousereact",
-    storageBucket: "aubier-coderhousereact.appspot.com",
-    messagingSenderId: "83442531350",
-    appId: "1:83442531350:web:fda13cdcb0ba93e4ad4937"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 initializeApp(firebaseConfig);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CartContext } from "../../context/CartContext"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import CartItems from './CartItems';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Swal from "sweetalert2"
@@ -42,9 +42,13 @@ const CartContainer = () => {
       console.log(newOrder);
     }
 
+    useEffect(() => {
+      window.scrollTo({top: 0, behavior: 'auto'})
+    }, []);
+
     return (
-    <section className="h-100 h-custom mb-5 mt-5">
-      <div className="container h-100 py-5">
+    <section className="h-100 h-custom mb-5 mt-auto">
+      <div className="container h-100 py-3">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-10 ">
             <div className="table-responsive">

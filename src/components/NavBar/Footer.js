@@ -21,10 +21,10 @@ const Footer = () => {
 					{/* <!-- info de redes --> */}
 					<h4 className="txtWhite txtMed fontSpecial">NUESTRAS REDES</h4>
 						
-							<img className="footer__img--width" src="img/chiquitos/facebook1.png" alt="Aubier en facebook"/>
+							<img className="footer__img--width" src="https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Ffacebook1.png?alt=media&token=07278c61-f5d1-49cf-ae0b-a81e3f77c2a6" alt="Aubier en facebook"/>
 						
 					
-							<img className="footer__img--width" src="img/chiquitos/instagram1.png" alt="Aubier en instagram"/>
+							<img className="footer__img--width" src="https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Finstagram1.png?alt=media&token=4eff055a-e575-4713-a22e-138ff34f4c06" alt="Aubier en instagram"/>
 						
 						
 							<h3 className="txtMed footer__newsletter pt-2">Suscribite al newsletter!</h3>
@@ -35,8 +35,8 @@ const Footer = () => {
 					<h5 className="txtSmall2">- Formas de envío -</h5>
 					<div id="formasDeEnvio">
 					
-						<img className="footer__img--margin" src="img/chiquitos/OCA.png" alt="OCA, compañia de envios"/>
-						<img className="footer__img--margin" src="img/chiquitos/correoargentino.png" alt="correo argentino"/>
+						<img className="footer__img--margin" src="https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2FOCA.png?alt=media&token=62ff6716-9e9d-4146-8376-a7183fcf3d65" alt="OCA, compañia de envios"/>
+						<img className="footer__img--margin" src="https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcorreoargentino.png?alt=media&token=5595d57f-5c0d-43e2-bfdf-97945239de4f" alt="correo argentino"/>
 					
 					</div>
 					

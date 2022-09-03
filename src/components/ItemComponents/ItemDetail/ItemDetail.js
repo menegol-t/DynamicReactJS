@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CartContext } from '../../../context/CartContext';
 // import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -10,6 +10,10 @@ const ItemDetail = ({itemsDetails}) => {
     // const navigate = useNavigate()
 
     const {addToCart} = useContext(CartContext);
+
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
+    }, []);
 
     const [count, setcount] = useState(0);
     console.log("ignorar esto es solo para sacar un warning: " + count);

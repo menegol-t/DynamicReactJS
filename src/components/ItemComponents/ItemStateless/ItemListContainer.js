@@ -11,6 +11,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
     const db = getFirestore()
+    window.scrollTo({top: 0, behavior: 'smooth'})
     if(category){
         const itemsCollectionCategory = query(
             collection(db, "items"), where("categoria", "==", category)

@@ -58,7 +58,8 @@ const CartContainer = () => {
                     <th scope="col" className="h5 txtMed2">Carrito de compras</th>
                     <th scope="col" className='txtMed txtCenter'>Quitar</th>
                     <th scope="col" className='txtMed txtCenter'>Cantidad</th>
-                    <th scope="col" className='txtMed txtCenter'>Precio</th>
+                    <th scope="col" className='txtMed txtCenter'>Unidad</th>
+                    <th scope="col" className='txtMed txtCenter'>Subtotal</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -77,7 +78,7 @@ const CartContainer = () => {
             </div>
             <div className="col-md-6 offset-md-3">
               <div className="d-flex justify-content-between" >
-                <p className="mb-2">Subtotal</p>
+                <p className="mb-2">Total (sin IVA)</p>
                 <p className="mb-2">${finalPrice}</p>
               </div>
               <hr className="my-4"/>
@@ -87,7 +88,7 @@ const CartContainer = () => {
               </div>
               <button type="button" className="btn bgBrown btn-block btn-lg" onClick={sendOrder}>
                 <div className="d-flex justify-content-between">
-                  <span className='txtSmall2'>Terminar la compra</span>
+                  <span className='txtSmall2'>Terminar la compra, total:</span>
                   <span className='txtSmall2'>${precioFinal}</span>
                 </div>
               </button>

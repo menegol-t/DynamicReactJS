@@ -26,7 +26,12 @@ const CartItems = ({itemCarrito}) => {
         </td>
         <td className="align-middle">
             <div className="d-flex flex-row">
-            <p className="mb-0 txtMed txtCenter" >{itemCarrito.precio}</p>
+                <p className="mb-0 txtMed txtCenter" >{itemCarrito.precio}</p>
+            </div>
+        </td>
+        <td className="align-middle">
+            <div className="d-flex flex-row">
+                <p className="mb-0 txtMed txtCenter" >{"$" + itemCarrito.precio2 * itemCarrito.cantidadAlCarrito}</p>
             </div>
         </td>
         </tr>

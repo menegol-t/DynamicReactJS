@@ -8,7 +8,6 @@ const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
     const {category} = useParams()
-    console.log(category);
 
     useEffect(() => {
     const db = getFirestore()

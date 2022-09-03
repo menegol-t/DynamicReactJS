@@ -16,16 +16,15 @@ const ItemDetail = ({itemsDetails}) => {
 
     const handleAdd = (cantidadAlCarrito) =>{
         setcount(cantidadAlCarrito)
-        // navigate("/cart")
         addToCart(itemsDetails, cantidadAlCarrito)
     }
 
     return (
         <section>
-			<div className="container-fluid">
-				<div className="row" id="divProductos">
+			<div className="container-fluid  mt-3">
+				<div className="row d-flex justify-content-evenly" id="divProductos">
                     <article className='col-md-6'>
-                        <figure className="width2">
+                        <figure className="width3">
                             <img src={itemsDetails.src2} alt={itemsDetails.alt} className="scale2 img-fluid"/>
                             <figcaption className="txtCenter mt-5 fontSpecial txtMed">{itemsDetails.nombre} <br/> {itemsDetails.precio}</figcaption>
                                 <div className="text-center bgNormal">
@@ -42,6 +41,7 @@ const ItemDetail = ({itemsDetails}) => {
                                             pauseOnFocusLoss
                                             draggable
                                             pauseOnHover
+                                            limit={3}
                                         />
                                     </div>
                                 </div>

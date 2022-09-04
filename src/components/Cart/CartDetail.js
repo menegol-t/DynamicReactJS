@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { CartContext } from "../../context/CartContext"
 import { useContext} from "react";
 
-const CartDetail = ({cart, cleanCart, precioFinal, userDataOrder}) => {
+const CartDetail = ({cart, cleanCart, finalCheckoutPrice, userDataOrder}) => {
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: 'auto'})
@@ -12,7 +12,7 @@ const CartDetail = ({cart, cleanCart, precioFinal, userDataOrder}) => {
 
     const {totalPrice} = useContext(CartContext)
 
-    const {impuestoIva} = useContext(CartContext)
+    const {ivaTax} = useContext(CartContext)
 
     return (
     <section className="h-100 h-custom mb-5 mt-auto">
@@ -32,7 +32,7 @@ const CartDetail = ({cart, cleanCart, precioFinal, userDataOrder}) => {
                 </thead>
                 <tbody>
                   
-                  {cart.map((itemCarrito) =><CartItems key={itemCarrito.id} itemCarrito={itemCarrito}/>)}   
+                  {cart.map((cartItem) =><CartItems key={cartItem.id} cartItem={cartItem}/>)}   
                   
                 </tbody>
               </table> 
@@ -52,12 +52,12 @@ const CartDetail = ({cart, cleanCart, precioFinal, userDataOrder}) => {
               <hr className="my-4"/>
               <div className="d-flex justify-content-between mb-4" >
                 <p className="mb-2">Impuestos (IVA)</p>
-                <p className="mb-2">${impuestoIva}</p>
+                <p className="mb-2">${ivaTax}</p>
               </div>
               <button type="button" className="btn bgBrown btn-block btn-lg" onClick={userDataOrder}>
                 <div className="d-flex justify-content-between">
                   <span className='txtSmall2'>Terminar la compra, total:</span>
-                  <span className='txtSmall2'>${precioFinal}</span>
+                  <span className='txtSmall2'>${finalCheckoutPrice}</span>
                 </div>
               </button>
             </div>

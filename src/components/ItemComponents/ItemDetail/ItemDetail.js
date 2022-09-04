@@ -33,7 +33,7 @@ const ItemDetail = ({itemsDetails}) => {
                                     <div className="card-body noneBorder">
                                         <p>{itemsDetails.descr}</p>
                                         <ItemCount stock={itemsDetails.stock} onAdd={handleAdd} count={count}/>
-                                        <Link to="/cart"><ToastContainer/></Link>
+                                        <Link to="/cart"><ToastContainer limit={3}/></Link>
                                     </div>
                                 </div>
                         </figure>

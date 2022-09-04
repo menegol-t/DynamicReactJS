@@ -11,7 +11,7 @@ const CartContainer = () => {
   
     const {cleanCart} = useContext(CartContext)
 
-    const {precioFinal} = useContext(CartContext)
+    const {finalCheckoutPrice} = useContext(CartContext)
 
     const userDataOrder = async() => {
       const { value: formValues } = await Swal.fire({
@@ -63,7 +63,7 @@ const CartContainer = () => {
           buyer: user, 
           items: cart, 
           date: new Date().toString(),
-          total: precioFinal,
+          total: finalCheckoutPrice,
           status: "accepted"
       } 
 
@@ -82,7 +82,7 @@ const CartContainer = () => {
   }
 
     return (
-      <CartDetail cart={cart} cleanCart={cleanCart} precioFinal={precioFinal} userDataOrder={userDataOrder} />
+      <CartDetail cart={cart} cleanCart={cleanCart} finalCheckoutPrice={finalCheckoutPrice} userDataOrder={userDataOrder} />
     ); 
 }
 

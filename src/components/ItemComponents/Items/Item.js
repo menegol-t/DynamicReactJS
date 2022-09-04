@@ -10,7 +10,7 @@ const Item = ({item}) => {
         <article className='col-md-6'>
             <figure className="width2" id={item.id}>
                 <Link to={`/item/${item.id}`}>
-                    <img src={item.src} alt={item.alt} className="scale2 img-fluid"/>
+                    <img src={item.src} alt={item.alt} className="scale2 img-fluid" />
                 </Link>
                 <figcaption className="txtCenter mt-5 fontSpecial txtMed ">{item.nombre} <br/> {item.precio}</figcaption>
                     <div className="text-center bgNormal">

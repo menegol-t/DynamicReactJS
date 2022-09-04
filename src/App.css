@@ -203,15 +203,7 @@ section div div article figure img {
   flex-direction: row;}
 
 /*footer */
-footer {
-  margin-top: 5%;
-  display: block;
-  width: auto; }
-  footer div {
-    font-size: 1.7rem; }
-    footer div div ul li {
-      font-size: 2rem;
-      font-weight: 400; }
+
 .div__map--width {
   margin: 0 auto 3% auto;
   width: 200%; }
@@ -230,10 +222,15 @@ footer {
     border-right: none;
     border-left: none;
     background-color: grey;
-    padding: 2%;
+    padding: 2% 2% 10%;;
     font-size: 2rem;
     display: flex;
     width: 100%; }
+    footer div {
+      font-size: 1.7rem; }
+      footer div div ul li {
+        font-size: 2rem;
+        font-weight: 400; }
     footer div ul {
       list-style-type: none;
       padding-left: 1%; }

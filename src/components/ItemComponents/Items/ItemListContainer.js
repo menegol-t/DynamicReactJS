@@ -30,7 +30,8 @@ const ItemListContainer = () => {
             setItems(data)
             })
             .catch((error) => console.error(error))
-    }},[category]);
+    }
+    },[category]);
 
     return (
         <main>

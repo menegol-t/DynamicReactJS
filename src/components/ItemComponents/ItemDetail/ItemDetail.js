@@ -15,7 +15,6 @@ const ItemDetail = ({itemsDetails}) => {
     }, []);
 
     const [count, setcount] = useState(0);
-    console.log("ignorar esto es solo para sacar un warning: " + count);
 
     const handleAdd = (cantidadAlCarrito) =>{
         setcount(cantidadAlCarrito)
@@ -33,7 +32,7 @@ const ItemDetail = ({itemsDetails}) => {
                                 <div className="text-center bgNormal">
                                     <div className="card-body noneBorder">
                                         <p>{itemsDetails.descr}</p>
-                                        <ItemCount stock={itemsDetails.stock} onAdd={handleAdd}/>
+                                        <ItemCount stock={itemsDetails.stock} onAdd={handleAdd} count={count}/>
                                         <Link to="/cart"><ToastContainer/></Link>
                                     </div>
                                 </div>

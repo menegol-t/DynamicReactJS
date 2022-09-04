@@ -12,10 +12,10 @@ const ItemListContainer = () => {
     useEffect(() => {
     const db = getFirestore()
     window.scrollTo({top: 0, behavior: 'smooth'})
+
     if(category){
-        const itemsCollectionCategory = query(
-            collection(db, "items"), where("categoria", "==", category)
-        )
+        const itemsCollectionCategory = query(collection(db, "items"), where("categoria", "==", category))
+
         getDocs(itemsCollectionCategory)
             .then((snapshot) => {
                 const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
@@ -23,11 +23,11 @@ const ItemListContainer = () => {
             })
             .catch((error) => console.error(error))
     }else{
-        const itemsCollectionCategory = collection(db, "items")
-        getDocs(itemsCollectionCategory)
+        const itemsCollection = collection(db, "items")
+        getDocs(itemsCollection)
             .then((snapshot) => { 
             const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-                setItems(data)
+            setItems(data)
             })
             .catch((error) => console.error(error))
     }},[category]);

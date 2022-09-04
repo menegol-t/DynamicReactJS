@@ -3,12 +3,15 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ItemLoading from "../ItemLoading";
+import ItemNotAvaliable from "../ItemNotAvaliable";
 
 const ItemDetailContainer = () => {
 
     const [itemsDetails, setItemsDetails] = useState([]); 
 
     const { id } = useParams()
+
+    const [itemDoesntExist, setItemDoesntExist] = useState(false)
 
     useEffect(() => {
         const db = getFirestore()
@@ -23,6 +26,8 @@ const ItemDetailContainer = () => {
                 ...snapshot.data()
             }
             setItemsDetails(data)
+            }else{
+                setItemDoesntExist(true)
             }
         })
         .catch((error) => console.error(error))
@@ -35,7 +40,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {itemsDetails.length === 0 ? (<ItemLoading/>) : (<ItemDetail itemsDetails= {itemsDetails}/>) }
+            {itemDoesntExist ? <ItemNotAvaliable/>: itemsDetails.length === 0 ? (<ItemLoading/>) : (<ItemDetail itemsDetails= {itemsDetails}/>) }
         </div>
     )
 }

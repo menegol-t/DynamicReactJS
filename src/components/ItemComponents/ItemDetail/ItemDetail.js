@@ -2,13 +2,11 @@ import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState, useEffect } from 'react';
 import { CartContext } from '../../../context/CartContext';
-// import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom"
 
 const ItemDetail = ({itemsDetails}) => {
-    // const navigate = useNavigate()
 
     const {addToCart} = useContext(CartContext);
 

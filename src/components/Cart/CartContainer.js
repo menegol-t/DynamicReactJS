@@ -6,11 +6,6 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import Swal from "sweetalert2"
 
 const CartContainer = () => {
-    const user = {
-      name: "Coder",
-      phone: 112233,
-      email: "coderHouse@mail.com"
-    }
 
     const {cart} = useContext(CartContext)
     
@@ -22,20 +17,63 @@ const CartContainer = () => {
 
     const precioFinal = impuestoIva + finalPrice
 
-    const sendOrder = () => {
+    const userWhoOrdered = async() => {
+      const { value: formValues } = await Swal.fire({
+        title: 'Ingresa tus datos para finalizar la compra!',
+        html:
+          '<input id="swal-input1" class="swal2-input" placeholder="Nombre" type="text" required>' +
+          '<input id="swal-input2" class="swal2-input" placeholder="Apellido" type="text" required>' +
+          '<input id="swal-input3" class="swal2-input -webkit-appearance: none; -moz-appearance: none; appearance: none;" placeholder="Telefono simplificado" type="number" min="0" onkeydown="javascript: return [`Backspace`,`Delete`,`ArrowLeft`,`ArrowRight`].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!==`Space`">' +
+          '<input id="swal-input4" class="swal2-input" placeholder="Email">' +
+          '<input id="swal-input5" class="swal2-input" placeholder="Ingresa tu Email nuevamente" type="email">',
+        focusConfirm: false,
+        preConfirm: () => {
+          return [
+            document.getElementById('swal-input1').value,
+            document.getElementById('swal-input2').value,
+            document.getElementById('swal-input3').value,
+            document.getElementById('swal-input4').value,
+            document.getElementById('swal-input5').value
+          ]
+        }
+      })
+      if (formValues.includes("")) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Datos incompletos',
+          text: "Asegurate de completar todos los campos."
+        })
+      }else if(formValues[3] !== formValues[4] || !formValues[3].includes("@")){
+        Swal.fire({
+          icon: 'warning',
+          title: 'Email no valido',
+          text: "Recuerda ingresalo las dos veces igual, y con '@'."
+        })
+      }else{
+        let user = {
+          name: formValues[0],
+          surname: formValues[1],
+          phone: formValues[2],
+          email: formValues[3]
+        }
+        sendOrder(user)
+      }}
+
+    const sendOrder = (user) => {
       const newOrder = {
         buyer: user, 
         items: cart, 
         date: new Date().toString(),
         total: precioFinal,
-      }
+        status: "generada"
+      } 
       const db = getFirestore()
       const orderCollection = collection(db, "order")
       addDoc(orderCollection, newOrder).then(({id}) => 
       {console.log({id})
       Swal.fire({
         icon: 'success',
-        title: `Se registro tu compra! Id: ${id}`,
+        title: `Compra exitosa, ${newOrder.buyer.name}! Id: ${id}`,
         showConfirmButton: true
       })
       }).then(cleanCart).catch((error) => console.error(error))
@@ -86,7 +124,7 @@ const CartContainer = () => {
                 <p className="mb-2">Impuestos (IVA)</p>
                 <p className="mb-2">${impuestoIva}</p>
               </div>
-              <button type="button" className="btn bgBrown btn-block btn-lg" onClick={sendOrder}>
+              <button type="button" className="btn bgBrown btn-block btn-lg" onClick={userWhoOrdered}>
                 <div className="d-flex justify-content-between">
                   <span className='txtSmall2'>Terminar la compra, total:</span>
                   <span className='txtSmall2'>${precioFinal}</span>

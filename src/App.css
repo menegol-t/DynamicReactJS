@@ -24,6 +24,13 @@ html {
           position: relative;
           left: -6px; }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
 .txtSmall {
   font-size: 1.5rem; }
 

@@ -12,13 +12,8 @@ const ItemCount = ({ stock, onAdd}) => {
 
         return(
             <div className="itemCount__div ">
-                <h2 className="txtCenter fontSpecial">Stock: {stock}</h2>
 
-                <div className="itemCount__botoncitos">
-                    <p className="txtMed">{amount}</p>  
-                </div>
-
-                <button className="txtCenter comprarbtn btn btn-outline-dark txtSmall boton__responsive">{buttonMainTxt}</button>
+                <button className="txtCenter comprarbtn btn btn-outline-dark txtSmall boton__responsive boton__deactiv pe-none">{buttonMainTxt}</button>
 
             </div>
         )

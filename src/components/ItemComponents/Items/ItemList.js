@@ -1,6 +1,5 @@
 import Item from "./Item"
 
-
 const ItemList = ({ items }) => {
     return (
         <section>
@@ -17,8 +16,3 @@ const ItemList = ({ items }) => {
 }
 
 export default ItemList
-
-/*Recibe items de ItemListContainer L4. Los mete en una caja general de boostrap que viene 
-por CDN en el HTML principal, y se los envia a Item que los mete en una caja individual para
-cada uno L10. Por cada objeto que recibe del array, lo mete en un Item con su propia key, y 
-pasa el objeto indiviaulmente al componente Item.*/

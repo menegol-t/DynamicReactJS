@@ -1,46 +1,53 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+// import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ItemLoading from "../ItemLoading";
 import ItemNotAvaliable from "../ItemNotAvaliable";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({info}) => {
 
     const [itemsDetails, setItemsDetails] = useState([]); 
 
     const { id } = useParams()
 
-    const [itemDoesntExist, setItemDoesntExist] = useState(false)
+    // const [itemDoesntExist, setItemDoesntExist] = useState(false)
 
-    useEffect(() => {
-        const db = getFirestore()
-        const itemRef = doc(db, "items", `${id}`)
+    // useEffect(() => {
+    //     const db = getFirestore()
+    //     const itemRef = doc(db, "items", `${id}`)
 
-        getDoc(itemRef)
-        .then((snapshot) => { 
+    //     getDoc(itemRef)
+    //     .then((snapshot) => { 
 
-            if (snapshot.exists()){
-            const data = {
-                id: snapshot.id,
-                ...snapshot.data()
-            }
-            setItemsDetails(data)
-            }else{
-                setItemDoesntExist(true)
-            }
-        })
-        .catch((error) => console.error(error))
+    //         if (snapshot.exists()){
+    //         const data = {
+    //             id: snapshot.id,
+    //             ...snapshot.data()
+    //         }
+    //         setItemsDetails(data)
+    //         }else{
+    //             setItemDoesntExist(true)
+    //         }
+    //     })
+    //     .catch((error) => console.error(error))
 
-        return(
-            setItemsDetails([])
-        )
+    //     return(
+    //         setItemsDetails([])
+    //     )
 
-    }, [id]);
+    // }, [id]);
+    useEffect(()=>{
+        setItemsDetails(info.find((product) => product.id === id))
+    }, [id, info])
+
+    
+    console.log(itemsDetails);
 
     return (
         <div>
-            {itemDoesntExist ? <ItemNotAvaliable/>: itemsDetails.length === 0 ? (<ItemLoading/>) : (<ItemDetail itemsDetails= {itemsDetails}/>) }
+            { itemsDetails !== undefined ? itemsDetails.length === 0 ? <ItemLoading/> : <ItemDetail itemsDetails={itemsDetails}/> : <ItemNotAvaliable/>}
+            {/* {itemDoesntExist ? <ItemNotAvaliable/>: itemsDetails.length === 0 ? (<ItemLoading/>) : (<ItemDetail itemsDetails= {itemsDetails}/>) } */}
         </div>
     )
 }

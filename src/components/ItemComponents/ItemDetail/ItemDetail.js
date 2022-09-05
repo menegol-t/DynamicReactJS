@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 
 const ItemDetail = ({itemsDetails}) => {
 
+    console.log(itemsDetails);
+
     const {addToCart} = useContext(CartContext);
 
     useEffect(() => {

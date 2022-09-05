@@ -78,8 +78,75 @@ Cuando el user pone especificamente una ruta /item con un item que no existe, es
 
 ### Dependencias: ItemList & ItemLoading
 
-Items L9 es un array que empieza vacio, que es despues enviado a ItemList L38. Cuando hay una categoria L16 va a buscar al servidor todos los items que coincidan con esta L17 y los setea en el array vacio L22. Si no hay categoria L25, muestra todos los items del servidor, y se queda escuchando por un cambio de categoria L34. Si los items no estan disponibles todavia, muestra un ItemLoading L38.
+Items L9 es un array que empieza vacio, que es despues enviado a ItemList L29. Scrollea hasta arriba L14, busca en el servidor todos los items L16. Ahi, filtra por categoria L19 o agarra todos L22 y los envia al landing (ItemList). Si los items no estan disponibles todavia, muestra un ItemLoading L19.
 
+`Adjunto dos codigos mas obtusos que requerian las entregas, porque era necesario usar "querys". Utilizo una version mas optimizada.`
+
+```javascript
+useEffect(() => {
+    const db = getFirestore()
+
+    if(category){
+        const itemsCollectionCategory = query(collection(db, "items"), where("categoria", "==", category))
+
+        getDocs(itemsCollectionCategory)
+            .then((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+                setItems(data)
+            })
+            .catch((error) => console.error(error))
+    }else{
+        const itemsCollection = collection(db, "items")
+        getDocs(itemsCollection)
+            .then((snapshot) => { 
+            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+            setItems(data)
+            })
+            .catch((error) => console.error(error))
+    }
+    },[category]);
+
+ useEffect(() => {
+        const db = getFirestore()
+        window.scrollTo({top: 0, behavior: 'smooth'})
+        const itemsCollectionCategory = collection(db, "items")
+        getDocs(itemsCollectionCategory)
+            .then((snapshot) => { 
+            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+            if(category){
+                setItems(data.filter((product) => product.categoria === category))
+            }else{
+                setItems(data)
+            }})
+            .catch((error) => console.error(error))
+    }, [category]);
+```
+
+`Adjunto codigo para buscar los items por JSON suponiendo que se tiene el banco de imagenes descargado.`
+
+```javascript
+useEffect(() => {
+    fetch("../prod.json")
+    .then(prod => prod.json())
+    .then((prod) => {
+        if(category){
+            setItems(prod.filter((product) => product.categoria === category))
+        }else{
+            setItems(prod)
+        }
+    })
+}, [category]); 
+```
+
+---
+## `ItemComponents: ItemList`
+
+### Dependencias: Item
+
+Recibe items de ItemListContainer L4. Los mete en una caja general de boostrap que viene 
+por CDN en el HTML principal, y se los envia a Item que los mete en una caja individual para
+cada uno L10. Por cada objeto que recibe del array, lo mete en un Item con su propia key, y 
+pasa el objeto indiviaulmente al componente Item.
 
 
 

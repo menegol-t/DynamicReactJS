@@ -29,12 +29,3 @@ function App() {
 }
 
 export default App;
-
-/* Funcion que añade mas productos de un JSON que yo le diga: 
- useEffect(() => {
-    const db = getFirestore()
-	  const itemsCollection = collection(db, "items")
-		
-		fetch("../../productos.json").then(anteojos => anteojos.json()).then(anteojos => anteojos.map((newItem) => {addDoc(itemsCollection, newItem).then(({id}) => console.log({id}))}))
-  },[])
-*/

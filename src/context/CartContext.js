@@ -91,17 +91,3 @@ const CartProvider = ({children}) => {
 }
 
 export default CartProvider
-
-/*El cart es un array que empieza vacio L6. Para verificar si hay o no un producto devolviendo true o false L9. 
-Para vaciar el carrito L13. Para añadir al carrito: Se recibe cualquier item que se va a añadir y su cantidad 
-L16. Se crea una constante que me devuelve el Indice de un item si es que ya estaba en el carrito. Si no estaba, 
-me devuelve -1 L18. Si no hay nada previamente en el carrtio L20, se setea el array del carrito L24 a incluir 
-un objeto que tenga el item y la cantidad a solicitada L22. Si el carrito no esta vacio L27 & L44, se verifica 
-si la variable indexOfDuplicatedItem me devolvió el index de un item que ya estaba en el carrito. Si me devuelve un 
-index valido L27, uso ese index en el carrito para modificar la cantidad antigua del item a: la cantidad nueva + 
-la cantidad vieja L29. Esto solo funciona si la cantidad a añadir + la cantidad ya añadida no son en total > que 
-el stock disponible de ese producto L33. Si no me devuelve un idex valido L44 (es decir me devuelve -1), agarro 
-lo que ya habia en el carrito y le añado el nuevo item L48. Para remover un item del carrito L55, creo un nuevo 
-array que incluye a todos los items previos excepto al que quiero eliminar, y seteo ese nuevo array como el 
-carrito L56. Para consultar el total de items en el carrito L60, solo acumulo la propiedad amountToCart de 
-todos los objetos del array. Para calcular el precio total L64, hago lo mismo.   */

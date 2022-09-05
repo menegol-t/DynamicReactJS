@@ -4,6 +4,15 @@ Powered by [ReactJS](https://github.com/facebook/create-react-app) & [Firestore]
 
 Features from [Bootstrap V5 & React-Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/), [React-Toastify](https://fkhadra.github.io/react-toastify/introduction), [SweetAlert2-React](https://sweetalert2.github.io/) & [React-Router-DOM V6](https://reactrouter.com/en/main).
 
+Images for this proyect are 100% on cloud, provided by firebase.
+
+This proyect respects the following:
+* PascalCase for Components.
+* camelCase & english for variables (Product properties as in prod.JSON). 
+* Functional & Static components separated.
+
+For more specifics and comments of the code check the [details document]() in spanish for now.
+
 ---
 ## Deployment
 
@@ -32,23 +41,32 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+---
+
 ## `Demo:`
 * Brosing through categories:
 
 ![Demonstration on how to briwse through the landing](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcategory.gif?alt=media&token=e829b4c6-1b86-4668-ab96-a00fab3dff04)
+
+[Or watch here.](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcategory.gif?alt=media&token=e829b4c6-1b86-4668-ab96-a00fab3dff04)
 
 ---
 * Counting items to purchase, validating stock and adding to cart:
 
 ![Demonstration on how the item counting works](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcounter.gif?alt=media&token=32e2b62e-b353-4251-81fd-5d10e4aa8a6f)
 
+[Or watch here.](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcounter.gif?alt=media&token=32e2b62e-b353-4251-81fd-5d10e4aa8a6f)
+
 ---
 * Cart usage with items (it's disabled when empty):
 
 ![Demonstration on how to use the cart](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcart.gif?alt=media&token=43cf262d-2aab-4b00-bdbb-d70b0d851315)
 
+[Or watch here.](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcart.gif?alt=media&token=43cf262d-2aab-4b00-bdbb-d70b0d851315)
+
 ---
 * Checkout proccess checks against missing datafields, mismatching emails and gives you a purchase Id obtained from firebase:
 
-![Demonstration of checkout process](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcheckout.gif?alt=media&token=d9a7fe70-ec53-4aaa-a768-fda751277fb3)
+![Demonstration of checkout process](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcheckout.gif?alt=media&token=69ce3cbe-eca7-415a-b05a-ce3973ef3ee8)
 
+[Or watch here.](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcheckout.gif?alt=media&token=69ce3cbe-eca7-415a-b05a-ce3973ef3ee8)

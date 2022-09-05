@@ -41,12 +41,6 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer;
-/*ItemList empieza sin items L8. Se hace un useEffect L11 que busca a los items y los setea como "item". 
-Si hay categoria en el router-dom, me hace lo mismo solo los productos con la categoria L23 & L35. Como 
-paso final, alimenta todos los datos de item a ItemList L39. */
-
-//ABAJO, CODIGO PARA MI DEBUBUGEO. 
-
 // useEffect(() => {
     //     const db = getFirestore()
     //     const itemsCollectionCategory = collection(db, "items")

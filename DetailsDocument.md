@@ -9,6 +9,16 @@ Este documento añade `funciones utiles` para debuggeo u otras utilidades.
 Todo mi proyecto funciona haciendo una sola request al servidor, cumpliendo con una de las metas de eficiencia "extra" de la rubrica de evaluación.
 
 ---
+# `Informacion de la entrega: requerimientos de coderhouse para la entrega final.`
+
+Consigna justificar librerias: Utilice las librerias Toastify y SweetAlert2 (a parte de las requeridas por el proyecto) debido a que:
+* Tostify: Brinda Toasts simples y utiles para refirigir la atencion del user del boton de compra al carrito, de manera intuitiva y sin tener que cambiar el boton de "agregar al carrito" o cambiarlo de lugar para acomodar un boton de "ir a carrito". Por esto, me parece una mejor decicion desde el punto de UX (mas que nada la parte de redirigir la atencion, sin ser tan disruptivo como un alert).
+
+* SweetAlert: Brinda alertas en lugares que necesito mostrar un componente presentacional, pero solo momentanemente. Sacar al user de el menu en el que esta para que realice otra accion, pero no retirarlo del componente, y darle la opcion de hacer "dismiss" a mi alert (clickeando fuera del mismo). Los utilizo para avisarle al usuario que items no puede añadir por pasarse del stock, y para hacer un formulario simple, escalable y estetico a la hora de hacer checkout. El mismo tambien es cancelable, ya que el usuario puede salir del mismo clickeando en otro lado intuitivamente. 
+
+* NOTAS: El unico item sin stock es el "Le Mans Oscuros" en caso de querer hacer pruebas con el mismo. Cuando se abre la consola web, sale un warning en amarillo. El mismo no es de mi proyecto, es del mapa en el footer provisto por google maps. El warning no interfiere con mi proyecto, y el mapa puede ser retirado del footer.JSX para eliminarlo si asi se desea. 
+
+---
 ### `App`
 
 Contiene las rutas a los componentes visuales principales, el landing por default, landing filtrando por categoria, detalle de items y cart.

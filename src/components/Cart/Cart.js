@@ -7,8 +7,7 @@ import EmptyCart from './EmptyCart';
 const Cart = () => {
   const {cart} = useContext(CartContext)
 
-  return(cart.length === 0 ? <EmptyCart/> : <CartContainer/>
-  )
+  return(cart.length === 0 ? <EmptyCart/> : <CartContainer/>)
 }
 
 export default Cart;

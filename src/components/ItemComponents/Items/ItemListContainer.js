@@ -9,6 +9,8 @@ const ItemListContainer = () => {
 
     const [info, setInfo] = useState([])
 
+    const { id } = useParams()
+
     useEffect(()=>{
         const db = getFirestore()
         window.scrollTo({top: 0, behavior: 'smooth'})
@@ -20,12 +22,9 @@ const ItemListContainer = () => {
         })
         .catch((error) => console.error(error))
     }, [])
-    
-    const { id } = useParams()
 
     return (
         <main>
-            {/* { info.length === 0 ? <ItemLoading/> : <ItemFilterList info={info}/> } */}
             { info.length === 0 ? <ItemLoading/> : id ?  <ItemDetailContainer info={info}/> : <ItemFilterList info={info}/> } 
         </main>
     )

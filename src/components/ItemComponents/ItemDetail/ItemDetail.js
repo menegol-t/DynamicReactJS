@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import { useState, useEffect } from 'react';
 import { CartContext } from '../../../context/CartContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom"
 
 const ItemDetail = ({itemsDetails}) => {
-
-    console.log(itemsDetails);
 
     const {addToCart} = useContext(CartContext);
 
@@ -47,6 +44,3 @@ const ItemDetail = ({itemsDetails}) => {
 }
 
 export default ItemDetail;
-/*Recibe de ItemDetailContainer L6 un item con ID unico. Recibe el numero que haya en el contador de 
-ItemCount L15 y se encarga de agregarlo al carrito L18. Le da formato al detalle del producto L21 y 
-le pasa Info del stock del item unico al ItemCount L32, asi como la funcion para añadir al carrito.*/

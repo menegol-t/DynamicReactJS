@@ -11,7 +11,7 @@ This proyect respects the following:
 * camelCase & english for variables (Product properties as in prod.JSON). 
 * Functional & Static components separated.
 
-For more specifics and comments of the code check the [details document]() in spanish for now.
+For more specifics and comments of the code check the [details document](https://github.com/menegol-t/Aubier-TomasMenegolReactJS/blob/master/DetailsDocument.md) in spanish for now.
 
 ---
 ## Deployment
@@ -46,9 +46,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## `Demo:`
 * Brosing through categories:
 
-![Demonstration on how to briwse through the landing](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcategory.gif?alt=media&token=e829b4c6-1b86-4668-ab96-a00fab3dff04)
+![Demonstration on how to browse through the landing](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcategory.gif?alt=media&token=65ba112e-dd08-491e-aee6-e3da80097548)
 
-[Or watch here.](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcategory.gif?alt=media&token=e829b4c6-1b86-4668-ab96-a00fab3dff04)
+[Or watch here.](https://firebasestorage.googleapis.com/v0/b/aubier-coderhousereact.appspot.com/o/chiquitos%2Fcategory.gif?alt=media&token=65ba112e-dd08-491e-aee6-e3da80097548)
 
 ---
 * Counting items to purchase, validating stock and adding to cart:

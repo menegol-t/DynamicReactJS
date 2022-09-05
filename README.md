@@ -4,7 +4,7 @@ Powered by [ReactJS](https://github.com/facebook/create-react-app) & [Firestore]
 
 Features from [Bootstrap V5 & React-Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/), [React-Toastify](https://fkhadra.github.io/react-toastify/introduction), [SweetAlert2-React](https://sweetalert2.github.io/) & [React-Router-DOM V6](https://reactrouter.com/en/main).
 
-Images for this proyect are 100% on cloud, provided by firebase.
+The information about the products for this proyect are 100% on cloud, provided by firebase.
 
 This proyect respects the following:
 * PascalCase for Components.

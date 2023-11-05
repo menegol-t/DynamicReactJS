@@ -14,7 +14,7 @@ This proyect respects the following:
 For more specifics and comments of the code check the [details document](https://github.com/menegol-t/Aubier-TomasMenegolReactJS/blob/master/DetailsDocument.md) in spanish for now.
 
 ---
-## [Deployment, click here](https://menegol-t.github.io/Aubier-TomasMenegolReactJS/)
+## [Deployment, click here](https://menegol-t.github.io/DynamicReactJS/)
 
 ---
 ## Available Scripts
